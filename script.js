@@ -6,7 +6,7 @@
 //     document.getElementById("budget").innerHTML("Total of bills: " + yearlyCost);
 // }
 
-function budget() {
+function calculate() {
     var sal = document.getElementById('a1');
     var exp = document.getElementsByClassName('expenses');
     var expInput = exp.length;
@@ -14,13 +14,30 @@ function budget() {
 
     for (var i = 0; i < expInput; i++) {
         total = total + parseInt(exp[i].value) * 12;
-        x = parseInt(sal.value) - total;
+         x = parseInt(sal.value) - total;
 
     }
-    document.getElementById('a8').value = x;
-    document.getElementById('a9').value = x / 24;
-    return x.toFixed(2);
+    document.getElementById('a2').value = x;
+    document.getElementById('a3').value = x / 24;
+   
 }
+
+function storage() {
+    var annual = document.getElementById('a2');
+    var biweekly = document.getElementById('a3');
+    var desc = document.getElementById('a5');
+    var price = document.getElementById('a6');
+
+    localStorage.setItem("Annual", annual.value);
+    localStorage.setItem("Biweekly", biweekly.value);
+
+    localStorage.setItem("Description", desc.value);
+    localStorage.setItem("Price", JSON.stringify(price));
+}
+
+
+
+
 
 // calculate = function() {
 //     var salary = document.getElementById('a1').value;

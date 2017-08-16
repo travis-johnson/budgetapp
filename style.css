@@ -29,3 +29,8 @@ div.form_info input {
     font-size: 15pt;
     font-weight: 400;
 }
+
+.form_info input:disabled {
+    background: transparent;
+    color: black;
+}

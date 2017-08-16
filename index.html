@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>Budget App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
-    <title>Da Budget App</title>
 </head>
 
 <body>
@@ -17,29 +16,47 @@
             <h2>Salary</h2>
             <input id="a1" type="text">
             <h2>Rent</h2>
-            <input class="expenses" id="a2" type="text" />
+            <input class="expenses" type="text" />
             <h2>Utilities</h2>
-            <input class="expenses" id="a3" type="text" />
+            <input class="expenses" type="text" />
             <h2>Insurance</h2>
-            <input class="expenses" id="a4" type="text" />
+            <input class="expenses" type="text" />
             <h2>Phone</h2>
-            <input class="expenses" id="a5" type="text" />
+            <input class="expenses" type="text" />
             <h2>Desired Savings</h2>
-            <input class="expenses" id="a6" type="text" />
+            <input class="expenses" type="text" />
             <h2>Travel</h2>
-            <input class="expenses" id="a7" type="text">
+            <input class="expenses" type="text">
         </div>
 
         <div class="form_info">
             <h2>Leftover Annual Budget</h2>
-            <input id="a8" type="text" onfocus="budget()" name="total_amt" />
+            <input id="a2" type="text" onfocus="calculate()" />
 
             <h2>Bi-Weekly Budget</h2>
-            <input id="a9" type="text" onfocus="budget()">
+            <input id="a3" type="text" onfocus="calculate()" >
+        </div>
+        
+        <div class="form">
+            <!--<h2>Choose a category</h2>
+            <select id="a4">
+                <option>Shopping</option>
+                <option>Event</option>
+                <option>Groceries</option>
+                <option>Dining</option>
+                <option>Misc.</option>
+            </select>-->
+            <h2>Enter a description (optional)</h2>
+            <input id="a5" type="text"/>
+            
+            <h2>How much was spent?</h2>
+            <input type="text" id="a6"/>
+            <button onclick="storage()">Store Info</button>
+
         </div>
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>-->
     <script src="script.js">
     </script>
 </body>
