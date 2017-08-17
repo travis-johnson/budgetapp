@@ -31,8 +31,7 @@ function storage() {
     localStorage.setItem("Annual", annual.value);
     localStorage.setItem("Biweekly", biweekly.value);
 
-    localStorage.setItem("Description", desc.value);
-    localStorage.setItem("Price", JSON.stringify(price));
+    localStorage.setItem( desc.value, price.value);
 }
 
 
