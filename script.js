@@ -1,11 +1,3 @@
-// function calculate() {
-//     var form = document.forms["oa_budget"];
-//     var rent = document.getElementById("rent").value;
-//     var utilities = document.getElementById("utilities");
-//     var yearlyCost = parseInt(rent) * 12;
-//     document.getElementById("budget").innerHTML("Total of bills: " + yearlyCost);
-// }
-
 function calculate() {
     var sal = document.getElementById('a1');
     var exp = document.getElementsByClassName('expenses');
@@ -24,32 +16,32 @@ function calculate() {
 
 function storage() {
     var annual = document.getElementById('a2');
-    var biweekly = document.getElementById('a3');
-    var desc = document.getElementById('a5');
-    var price = document.getElementById('a6');
-
+    var biweekly = document.getElementById('a3'); 
     localStorage.setItem("Annual", annual.value);
     localStorage.setItem("Biweekly", biweekly.value);
 
-    localStorage.setItem( desc.value, price.value);
 }
 
+function calcExpns() {
+    var totalAnnual = localStorage.getItem("Annual");
+    var totalBiweekly = localStorage.getItem("Biweekly");
+    var desc = document.getElementById('a5').value;
+    var price = document.getElementById('a6').value;
+    var deduct = totalBiweekly - price;
+    
+
+    localStorage.setItem("New Amount", deduct);
+    
+    localStorage.setItem(desc , price);
 
 
+    //localStorage.setItem(desc.value, price.value);
 
+}
 
-// calculate = function() {
-//     var salary = document.getElementById('a1').value;
-//     var rent = document.getElementById('a2').value;
-//     var utilities = document.getElementById('a3').value;
-//     var insurance = document.getElementById('a4').value;
-//     var phone = document.getElementById('a5').value;
-//     var savings = document.getElementById('a6').value;
-//     var travel = document.getElementById('a7').value;
-//     var fixedExpenses = parseInt(rent) + parseInt(utilities) + parseInt(insurance) + parseInt(phone) + parseInt(savings) + parseInt(travel);
-//     var totalExpenses = parseInt(fixedExpenses) * 12;
-//     var annualBudget = parseInt(salary) - parseInt(totalExpenses);
-//     document.getElementById('a8').value = salary - totalExpenses;
-//     document.getElementById('a9').value = parseInt(annualBudget) / 24;
+function reset() {
+    document.getElementById("a5").value = "";
+    document.getElementById("a6").value = "";
 
-// }
+}
+
