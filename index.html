@@ -12,7 +12,7 @@
 <body>
     <div class="container">
 
-        <div class="form">
+        <div id="budget" class="form">
             <h2>Salary</h2>
             <input id="a1" type="text">
             <h2>Rent</h2>
@@ -35,10 +35,21 @@
 
             <h2>Bi-Weekly Budget</h2>
             <input id="a3" type="text" onfocus="calculate()">
-            <a onclick="storage()" href="expenses.html">Input Daily Expenses</a>
+            <a onclick="storage()" href="#expenses">Input Daily Expenses</a>
 
         </div>
+        
+        
+        <div id="expenses" class="form">
 
+            <h2>Enter a description (optional)</h2>
+            <input id="a5" type="text" />
+
+            <h2>How much was spent?</h2>
+            <input type="text" id="a6" />
+            <button onclick="calcExpns(); reset();">Calculate</button>
+
+        </div>
 
     </div>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>-->

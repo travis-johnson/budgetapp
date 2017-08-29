@@ -8,12 +8,18 @@ h2 {
 
 .container {
     width: 100%;
+    padding: 20px;
 }
 
-div.form,
+/*div.form,
 div.form_info,
 input {
     text-align: center;
+}*/
+
+.form_info a {
+    float: left;
+    margin: 30px 0;
 }
 
 div.form input {
@@ -33,4 +39,11 @@ div.form_info input {
 .form_info input:disabled {
     background: transparent;
     color: black;
+}
+
+#expenses {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    padding: 20px;
 }

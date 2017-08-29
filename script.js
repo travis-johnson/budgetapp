@@ -23,24 +23,14 @@ function storage() {
 }
 
 function calcExpns() {
-    var totalAnnual = localStorage.getItem("Annual");
     var totalBiweekly = localStorage.getItem("Biweekly");
     var desc = document.getElementById('a5').value;
     var price = document.getElementById('a6').value;
     var deduct = totalBiweekly - price;
 
 
-    localStorage.setItem("New Amount", deduct);
-
+    localStorage.setItem("Biweekly", deduct);
     localStorage.setItem(desc, price);
-
-
-
-
-
-
-    //localStorage.setItem(desc.value, price.value);
-
 }
 
 
