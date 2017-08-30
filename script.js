@@ -28,9 +28,9 @@ function calcExpns() {
     var price = document.getElementById('a6').value;
     var deduct = totalBiweekly - price;
 
-
-    localStorage.setItem("Biweekly", deduct);
+    localStorage.setItem("Biweekly", deduct.toFixed(2));
     localStorage.setItem(desc, price);
+    document.getElementById("remaining_budget").innerHTML = "<h3> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</h3>";
 }
 
 
@@ -38,5 +38,11 @@ function calcExpns() {
 function reset() {
     document.getElementById("a5").value = "";
     document.getElementById("a6").value = "";
+
+}
+
+function display() {
+    
+    document.getElementById("remaining_budget").innerHTML = "<h3> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</h3>";
 
 }
