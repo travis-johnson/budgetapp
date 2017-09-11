@@ -11,14 +11,14 @@ function calculate() {
     }
     document.getElementById('a2').value = x.toFixed(2);
     document.getElementById('a3').value = y.toFixed(2);
-    
+
 
 }
 
 function storage() {
     var annual = document.getElementById('a2');
     var biweekly = document.getElementById('a3');
-   
+
     localStorage.setItem("Annual", annual.value);
     localStorage.setItem("Biweekly", biweekly.value);
     localStorage.setItem("Static-BiWeekly", biweekly.value);
@@ -29,10 +29,11 @@ function calcExpns() {
     var desc = document.getElementById('a5').value;
     var price = document.getElementById('a6').value;
     var deduct = totalBiweekly - price;
-    //Stores values of expenses in localStorage.
+
     localStorage.setItem("Biweekly", deduct.toFixed(2));
-    localStorage.setItem(desc, price);
     document.getElementById("remaining_budget").innerHTML = "<h3> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</h3>";
+    // document.getElementById('exp_desc').innerHTML += '<span class="desc_text">' + desc + '</span>' + '<span class="desc_text">' + price + '</span>';
+    document.getElementsByClassName("exp_text").innerHTML += desc + "$" + price;
 
 }
 
@@ -45,16 +46,20 @@ function reset() {
 }
 
 function display() {
+    //Displays the remaining budget and is actively deducted when user inputs an expense.
     document.getElementById("remaining_budget").innerHTML = "<h3> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</h3>";
     var d = new Date();
     var n = d.getDate();
     var sb = localStorage.getItem("Static-BiWeekly");
     //This will reset the value of Biweekly in localStorage to the static value assigned when you first setup your budget.
-    if (n === 15 || n === 30) {
+    if (n === 15 || n === 30 || n === 31) {
         localStorage.setItem("Biweekly", sb);
+    } else {
+        console.log("Not yet payday!");
     }
+    // var desc = document.getElementById("a5").value;
+    // var price = document.getElementById("a6").value;
 
+    // document.getElementById('exp_desc').innerHTML += "<span>" + desc + "</span>" + "<span>" + price + "</span>";
 
 }
-
-
