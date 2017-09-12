@@ -42,7 +42,7 @@
 
         <div id="expenses" class="form">
 
-            <form onsubmit="calcExpns(); display();">
+            <form onsubmit="calcExpns(); display(); exp();">
                 <h2>Enter a description.</h2>
                 <!-- <input id="a5" type="text" /> -->
                 <select id="a5">
@@ -57,11 +57,11 @@
                 </select>
                 <h2>How much was spent?</h2>
                 <input type="text" id="a6" />
-                <input type="Submit" onclick="submit();">
+                <input type="Submit" onclick="exp(); reset(); display();">
             </form>
             <div id="remaining_budget"></div>
             <div id="exp_desc">
-                <span class="exp_text"></span>
+
 
 
             </div>
