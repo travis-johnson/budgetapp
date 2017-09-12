@@ -42,12 +42,23 @@
 
         <div id="expenses" class="form">
 
-            <h2>Enter a description.</h2>
-            <input id="a5" type="text" />
-
-            <h2>How much was spent?</h2>
-            <input type="text" id="a6" />
-            <button onclick="calcExpns(); reset();">Calculate</button>
+            <form onsubmit="calcExpns(); display();">
+                <h2>Enter a description.</h2>
+                <!-- <input id="a5" type="text" /> -->
+                <select id="a5">
+                    <option value="shopping">Shopping</option>
+                    <option value="dining">Dining</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="alcohol">Alcohol</option>
+                    <option value="health">Health</option>
+                    <option value="pet">Pet</option>
+                    <option value="gift">Gift</option>
+                </select>
+                <h2>How much was spent?</h2>
+                <input type="text" id="a6" />
+                <input type="Submit" onclick="submit();">
+            </form>
             <div id="remaining_budget"></div>
             <div id="exp_desc">
                 <span class="exp_text"></span>

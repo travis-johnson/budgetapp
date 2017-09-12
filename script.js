@@ -19,28 +19,39 @@ function storage() {
     var annual = document.getElementById('a2');
     var biweekly = document.getElementById('a3');
 
+
     localStorage.setItem("Annual", annual.value);
     localStorage.setItem("Biweekly", biweekly.value);
     localStorage.setItem("Static-BiWeekly", biweekly.value);
+
 }
 
 function calcExpns() {
     var totalBiweekly = localStorage.getItem("Biweekly");
-    var desc = document.getElementById('a5').value;
+    var shopping = document.getElementById("a5").options[0].text;
+    var dining = document.getElementById("a5").options[1].text;
     var price = document.getElementById('a6').value;
+
+    var din = localStorage.getItem("Dining");
+    var shp = localStorage.getItem("Shopping");
+    var dinVal = +din + +price;
+    var shpVal = +shp + +price;
     var deduct = totalBiweekly - price;
 
+    localStorage.setItem(shopping, shpVal);
+    localStorage.setItem(dining, dinVal);
     localStorage.setItem("Biweekly", deduct.toFixed(2));
     document.getElementById("remaining_budget").innerHTML = "<h3> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</h3>";
-    // document.getElementById('exp_desc').innerHTML += '<span class="desc_text">' + desc + '</span>' + '<span class="desc_text">' + price + '</span>';
-    document.getElementsByClassName("exp_text").innerHTML += desc + "$" + price;
+    // document.getElementById('exp_desc').innerHTML += '<span class="desc_text">' + desc + '</span>  ' + '  <span class="desc_text">$' + price + '</span>';
 
+    console.log(shpVal);
+
+    //Try an If statement with the different categories.  Right now they are adding the price to all categories.
 }
 
 
 //Resets the input fields after an expense is entered.
 function reset() {
-    document.getElementById("a5").value = "";
     document.getElementById("a6").value = "";
 
 }
@@ -57,9 +68,10 @@ function display() {
     } else {
         console.log("Not yet payday!");
     }
-    // var desc = document.getElementById("a5").value;
-    // var price = document.getElementById("a6").value;
 
-    // document.getElementById('exp_desc').innerHTML += "<span>" + desc + "</span>" + "<span>" + price + "</span>";
+
+    // var food = localStorage.getItem("Food");
+    // var clothing = localStorage.getItem("Clothing");
+    // document.getElementById('exp_desc').innerHTML = "<li>Food $" + food + "</li>" + "<li>Clothing $" + clothing + "</li>";
 
 }
