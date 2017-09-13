@@ -26,23 +26,6 @@ function storage() {
 
 }
 
-// function calcExpns() {
-//     var totalBiweekly = localStorage.getItem("Biweekly");
-//     // var cat = document.getElementById('a5').value;
-//     // var shopping = document.getElementById("a5").options[0].text;
-//     // var dining = document.getElementById("a5").options[1].text;
-//     var price = document.getElementById('a6').value;
-//     var deduct = totalBiweekly - price;
-//     localStorage.setItem("Biweekly", deduct.toFixed(2));
-//     document.getElementById("remaining_budget").innerHTML = "<p> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</p>";
-//     // document.getElementById('exp_desc').innerHTML += '<span class="desc_text">' + desc + '</span>  ' + '  <span class="desc_text">$' + price + '</span>';
-
-
-//     //Try an If statement with the different categories.  Right now they are adding the price to all categories.
-
-
-// }
-
 
 //Resets the input fields after an expense is entered.
 function reset() {
@@ -157,4 +140,27 @@ function exp() {
             localStorage.setItem(gift, giftVal);
             break;
     }
+}
+
+
+//changes the class name to "is-active" to enable tabs styling in Bulma
+
+var budget = document.getElementById("budget");
+var expenses = document.getElementById("expenses");
+
+var bgt = document.getElementById("bgt");
+var xpn = document.getElementById("xpn");
+
+bgt.onclick = function() {
+    bgt.classList.add('is-active');
+    xpn.classList.remove('is-active');
+    budget.classList.remove("invisible");
+    expenses.classList.add("invisible");
+
+}
+xpn.onclick = function() {
+    xpn.classList.add('is-active');
+    bgt.classList.remove('is-active');
+    expenses.classList.remove("invisible");
+    budget.classList.add("invisible");
 }

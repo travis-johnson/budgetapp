@@ -1,3 +1,11 @@
 #budget {
     padding: 0 10px;
 }
+
+.invisible {
+    display: none;
+}
+
+.nav_bar {
+    margin: 15px 0;
+}
