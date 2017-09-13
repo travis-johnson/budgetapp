@@ -22,12 +22,13 @@
         <!-- NAV BAR  -->
         <div class="tabs is-centered is-boxed is-medium nav_bar">
             <ul>
-                <li onclick="isActive()" id="bgt">
-                    <a><span>Budget</span></a>
-                </li>
                 <li onclick="isActive()" id="xpn" class="is-active">
                     <a><span>Expenses</span></a>
                 </li>
+                <li onclick="isActive()" id="bgt">
+                    <a><span>Budget</span></a>
+                </li>
+
             </ul>
         </div>
 
@@ -122,7 +123,8 @@
                             <label class="label">How much was spent?</label>
                             <div class="control"><input type="text" class="input" id="a6" /></div>
                         </div>
-                        <input class="button is-primary" type="Submit" onclick="exp(); reset(); display();">
+                        <button class="button is-success" type="Submit" onclick="exp(); reset(); display();" value=""><i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        </button>
                     </form>
                 </div>
                 <div id="remaining_budget"></div>

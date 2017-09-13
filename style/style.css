@@ -9,3 +9,8 @@
 .nav_bar {
     margin: 15px 0;
 }
+
+#remaining_budget {
+    text-align: center;
+    margin: 20px;
+}
