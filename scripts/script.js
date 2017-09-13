@@ -26,22 +26,22 @@ function storage() {
 
 }
 
-function calcExpns() {
-    var totalBiweekly = localStorage.getItem("Biweekly");
-    // var cat = document.getElementById('a5').value;
-    // var shopping = document.getElementById("a5").options[0].text;
-    // var dining = document.getElementById("a5").options[1].text;
-    var price = document.getElementById('a6').value;
-    var deduct = totalBiweekly - price;
-    localStorage.setItem("Biweekly", deduct.toFixed(2));
-    document.getElementById("remaining_budget").innerHTML = "<h3> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</h3>";
-    // document.getElementById('exp_desc').innerHTML += '<span class="desc_text">' + desc + '</span>  ' + '  <span class="desc_text">$' + price + '</span>';
+// function calcExpns() {
+//     var totalBiweekly = localStorage.getItem("Biweekly");
+//     // var cat = document.getElementById('a5').value;
+//     // var shopping = document.getElementById("a5").options[0].text;
+//     // var dining = document.getElementById("a5").options[1].text;
+//     var price = document.getElementById('a6').value;
+//     var deduct = totalBiweekly - price;
+//     localStorage.setItem("Biweekly", deduct.toFixed(2));
+//     document.getElementById("remaining_budget").innerHTML = "<p> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</p>";
+//     // document.getElementById('exp_desc').innerHTML += '<span class="desc_text">' + desc + '</span>  ' + '  <span class="desc_text">$' + price + '</span>';
 
 
-    //Try an If statement with the different categories.  Right now they are adding the price to all categories.
+//     //Try an If statement with the different categories.  Right now they are adding the price to all categories.
 
 
-}
+// }
 
 
 //Resets the input fields after an expense is entered.
@@ -60,7 +60,7 @@ function display() {
     var pt = localStorage.getItem("Pet");
     var gft = localStorage.getItem("Gift");
     //Displays the remaining budget and is actively deducted when user inputs an expense.
-    document.getElementById("remaining_budget").innerHTML = "<h3> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</h3>";
+    document.getElementById("remaining_budget").innerHTML = "<h4 class='thin'> Remaining Budget:  $" + localStorage.getItem("Biweekly") + "</h4>";
     var d = new Date();
     var n = d.getDate();
     var sb = localStorage.getItem("Static-BiWeekly");
@@ -73,6 +73,7 @@ function display() {
 
     //Come back to this and find a way to not display items that are null
     document.getElementById('exp_desc').innerHTML =
+        "<ul>" +
         "<li>Shopping $" + shp + "</li>" +
         "<li>Dining $" + din + "</li>" +
         "<li>Entertainment $" + ent + "</li>" +
@@ -80,7 +81,8 @@ function display() {
         "<li>Alcohol $" + alc + "</li>" +
         "<li>Health $" + heal + "</li>" +
         "<li>Pet $" + pt + "</li>" +
-        "<li>Gift $" + gft + "</li>";
+        "<li>Gift $" + gft + "</li>"; +
+    "</ul>"
 
 
     // var food = localStorage.getItem("Food");
@@ -156,3 +158,6 @@ function exp() {
             break;
     }
 }
+
+
+//Side Nav

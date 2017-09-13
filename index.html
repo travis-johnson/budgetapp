@@ -5,48 +5,73 @@
     <title>Budget App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link href="style/materialize.css" rel="stylesheet"> -->
+    <link href="style/materialize.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
 </head>
 
 <body onload="display()">
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">settings</i></a>
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <!-- <a href="#" data-activates="slide-out" class="menu-collapse"><i class="material-icons">close</i></a> -->
+            <form id="budget">
+                <div class="input-field">
+                    <label for="salary">Salary</label>
+                    <input name="salary" id="a1" type="text">
+                </div>
+                <div class="input-field">
+                    <label for="rent">Rent</label>
+                    <input class="expenses" name="rent" type="text" />
+                </div>
+                <div class="input-field">
+                    <label for="util">Utilities</label>
+                    <input name="util" class="expenses" type="text" />
+                </div>
+                <div class="input-field">
+                    <label for="ins">Insurance</label>
+                    <input class="expenses" name="ins" type="text" />
+                </div>
+                <div class="input-field">
+                    <label for="phone">Phone</label>
+                    <input class="expenses" name="phone" type="text" />
+                </div>
+                <div class="input-field">
+                    <label for="savings">Desired Savings</label>
+                    <input class="expenses" name="savings" type="text" />
+                </div>
+                <div class="input-field">
+                    <label for="travel">Travel</label>
+                    <input class="expenses" name="travel" type="text">
+                </div>
+                <label>Leftover Annual Budget</label>
+                <input id="a2" type="text" onfocus="calculate()" />
+
+                <label>Bi-Weekly Budget</label>
+                <input id="a3" type="text" onfocus="calculate()">
+                <input type="submit" onclick="storage(); display();" href="#expenses" value="Input Daily Expenses">
+            </form>
+        </li>
+    </ul>
+
+
+
+
     <div class="container">
 
-        <div id="budget" class="form">
-            <h2>Salary</h2>
-            <input id="a1" type="text">
-            <h2>Rent</h2>
-            <input class="expenses" type="text" />
-            <h2>Utilities</h2>
-            <input class="expenses" type="text" />
-            <h2>Insurance</h2>
-            <input class="expenses" type="text" />
-            <h2>Phone</h2>
-            <input class="expenses" type="text" />
-            <h2>Desired Savings</h2>
-            <input class="expenses" type="text" />
-            <h2>Travel</h2>
-            <input class="expenses" type="text">
-        </div>
-
-        <div class="form_info">
-            <h2>Leftover Annual Budget</h2>
-            <input id="a2" type="text" onfocus="calculate()" />
-
-            <h2>Bi-Weekly Budget</h2>
-            <input id="a3" type="text" onfocus="calculate()">
-            <a onclick="storage(); display();" href="#expenses">Input Daily Expenses</a>
-
-        </div>
 
 
-        <div id="expenses" class="form">
+        <div class="row">
 
-            <form onsubmit="calcExpns(); display(); exp();">
-                <h2>Enter a description.</h2>
-                <!-- <input id="a5" type="text" /> -->
-                <select id="a5">
+
+
+            <div id="expenses" class="form col m6 l6 s12">
+
+                <form onsubmit="display(); exp();">
+                    <label>Enter a description.</label>
+                    <!-- <input id="a5" type="text" /> -->
+                    <select class="browser-default" id="a5">
                     <option value="shopping">Shopping</option>
                     <option value="dining">Dining</option>
                     <option value="entertainment">Entertainment</option>
@@ -56,23 +81,22 @@
                     <option value="pet">Pet</option>
                     <option value="gift">Gift</option>
                 </select>
-                <h2>How much was spent?</h2>
-                <input type="text" id="a6" />
-                <input type="Submit" onclick="exp(); reset(); display();">
-            </form>
-            <div id="remaining_budget"></div>
-            <div id="exp_desc">
-
-
+                    <label>How much was spent?</label>
+                    <input type="text" id="a6" />
+                    <input type="Submit" onclick="exp(); reset(); display();">
+                </form>
+                <div id="remaining_budget"></div>
+                <div id="exp_desc"></div>
 
             </div>
-
         </div>
-
     </div>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>-->
-    <script src="scripts/script.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="scripts/materialize.js"></script>
+
+    <script src="scripts/script.js"></script>
+    <script src="http://materializecss.com/templates/starter-template/js/init.js"></script>
+
 </body>
 
 </html>
