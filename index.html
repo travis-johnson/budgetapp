@@ -17,7 +17,7 @@
 
 
 
-    <div class="container">
+    <div class="container is-fluid">
 
         <!-- NAV BAR  -->
         <div class="tabs is-centered is-boxed is-medium nav_bar">
@@ -100,37 +100,67 @@
 
 
 
-        <div class="section" id="expenses">
+        <div id="expenses">
+
             <div class="container">
+                <div class="columns is-desktop">
+                    <div class="column">
+                        <form id="exp_form" onsubmit="display(); exp();">
+                            <div class="field"> <label class="label">Category</label>
+                                <!-- <input id="a5" type="text" /> -->
+                                <div class="select">
+                                    <select class="browser-default" id="a5">
+                                            <option value="shopping">Shopping</option>
+                                            <option value="dining">Dining</option>
+                                            <option value="entertainment">Entertainment</option>
+                                            <option value="groceries">Groceries</option>
+                                            <option value="alcohol">Alcohol</option>
+                                            <option value="health">Health</option>
+                                            <option value="pet">Pet</option>
+                                            <option value="gift">Gift</option>
+                                        </select>
 
-                <div class="box">
-                    <form onsubmit="display(); exp();">
-                        <label>Enter a description.</label>
-                        <!-- <input id="a5" type="text" /> -->
-                        <div class="select">
-                            <select class="browser-default" id="a5">
-                                <option value="shopping">Shopping</option>
-                                <option value="dining">Dining</option>
-                                <option value="entertainment">Entertainment</option>
-                                <option value="groceries">Groceries</option>
-                                <option value="alcohol">Alcohol</option>
-                                <option value="health">Health</option>
-                                <option value="pet">Pet</option>
-                                <option value="gift">Gift</option>
-                            </select>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">How much was spent?</label>
+                                <div class="control"><input type="text" class="input" id="a6" /></div>
+
+                                <button class="button is-success" type="Submit" onsubmit="exp(); reset(); display();" value=""><i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    </button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="column">
+                        <section class="hero is-success">
+                            <div class="hero-body">
+                                <div id="remaining_budget"></div>
+
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div class="column">
+                        <div class="box" id="exp_levels">
+                            <progress id="shpPrg" class="progress" max="100"></progress>
+                            <progress id="dinPrg" class="progress" max="100"></progress>
+                            <progress id="entPrg" class="progress" max="100"></progress>
+                            <progress id="grcPrg" class="progress" max="100"></progress>
+                            <progress id="alcPrg" class="progress" max="100"></progress>
+                            <progress id="hlPrg" class="progress" max="100"></progress>
+                            <progress id="ptPrg" class="progress" max="100"></progress>
+                            <progress id="gftPrg" class="progress" max="100"></progress>
+
+
+
+
                         </div>
-                        <div class="field">
-                            <label class="label">How much was spent?</label>
-                            <div class="control"><input type="text" class="input" id="a6" /></div>
-                        </div>
-                        <button class="button is-success" type="Submit" onclick="exp(); reset(); display();" value=""><i class="fa fa-plus-circle" aria-hidden="true"></i>
-                        </button>
-                    </form>
+                    </div>
                 </div>
-                <div id="remaining_budget"></div>
-                <div id="exp_desc"></div>
-
-
+                <div class="section" id="exp_desc"></div>
 
             </div>
         </div>

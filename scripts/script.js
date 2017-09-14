@@ -67,6 +67,10 @@ function display() {
         "<p class='title'>" + "$" + din + "<p>" +
         "</div>" + "</div>" +
         "<div class='level-item has-text-centered'>" +
+        "<div>" + "<p class='heading'>" + "Entertainment" + "</p>" +
+        "<p class='title'>" + "$" + ent + "<p>" +
+        "</div>" + "</div>" +
+        "<div class='level-item has-text-centered'>" +
         "<div>" + "<p class='heading'>" + "Groceries" + "</p>" +
         "<p class='title'>" + "$" + groc + "<p>" +
         "</div>" + "</div>" +
@@ -88,17 +92,18 @@ function display() {
         "</div>" + "</div>"
     "</nav>"
 
-    // "<li>Shopping $" + shp + "</li>" +
-    // "<li>Dining $" + din + "</li>" +
-    // "<li>Entertainment $" + ent + "</li>" +
-    // "<li>Groceries $" + groc + "</li>" +
-    // "<li>Alcohol $" + alc + "</li>" +
-    // "<li>Health $" + heal + "</li>" +
-    // "<li>Pet $" + pt + "</li>" +
-    // "<li>Gift $" + gft + "</li>"; +
-    // var food = localStorage.getItem("Food");
-    // var clothing = localStorage.getItem("Clothing");
-    // document.getElementById('exp_desc').innerHTML = "<li>Food $" + food + "</li>" + "<li>Clothing $" + clothing + "</li>";
+
+
+    document.getElementById("shpPrg").value = localStorage.getItem("Shopping-Percent");
+    document.getElementById("dinPrg").value = localStorage.getItem("Dining-Percent");
+    document.getElementById("entPrg").value = localStorage.getItem("Entertainment-Percent");
+    document.getElementById("grcPrg").value = localStorage.getItem("Groceries-Percent");
+    document.getElementById("alcPrg").value = localStorage.getItem("Alcohol-Percent");
+    document.getElementById("hlPrg").value = localStorage.getItem("Health-Percent");
+    document.getElementById("ptPrg").value = localStorage.getItem("Pet-Percent");
+    document.getElementById("gftPrg").value = localStorage.getItem("Gift-Percent");
+
+
 
 }
 
@@ -143,40 +148,41 @@ function exp() {
     localStorage.setItem("Biweekly", deduct.toFixed(2));
 
 
+    var statB = localStorage.getItem("Static-BiWeekly");
 
 
     switch (document.getElementById('a5').value) {
         case "shopping":
             localStorage.setItem(shopping, shpVal);
-            localStorage.setItem("Shopping-Percent", (shp / biweekly * 100));
+            localStorage.setItem("Shopping-Percent", (shp / statB * 100));
             break;
         case "dining":
             localStorage.setItem(dining, dinVal);
-            localStorage.setItem("Dining-Percent", (din / biweekly * 100));
+            localStorage.setItem("Dining-Percent", (din / statB * 100));
             break;
         case "entertainment":
             localStorage.setItem(entertainment, entVal);
-            localStorage.setItem("Entertainment-Percent", (ent / biweekly * 100));
+            localStorage.setItem("Entertainment-Percent", (ent / statB * 100));
             break;
         case "groceries":
             localStorage.setItem(groceries, grocVal);
-            localStorage.setItem("Groceries-Percent", (groc / biweekly * 100));
+            localStorage.setItem("Groceries-Percent", (groc / statB * 100));
             break;
         case "alcohol":
             localStorage.setItem(alcohol, alcVal);
-            localStorage.setItem("Alcohol-Percent", (alc / biweekly * 100));
+            localStorage.setItem("Alcohol-Percent", (alc / statB * 100));
             break;
         case "health":
             localStorage.setItem(health, healVal);
-            localStorage.setItem("Health-Percent", (heal / biweekly * 100));
+            localStorage.setItem("Health-Percent", (heal / statB * 100));
             break;
         case "pet":
             localStorage.setItem(pet, petVal);
-            localStorage.setItem("Pet-Percent", (pt / biweekly * 100));
+            localStorage.setItem("Pet-Percent", (pt / statB * 100));
             break;
         case "gift":
             localStorage.setItem(gift, giftVal);
-            localStorage.setItem("Gift-Percent", (gft / biweekly * 100));
+            localStorage.setItem("Gift-Percent", (gft / statB * 100));
             break;
     }
 
