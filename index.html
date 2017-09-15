@@ -124,7 +124,7 @@
                             </div>
                             <div class="field">
                                 <label class="label">How much was spent?</label>
-                                <div class="control"><input type="text" class="input" id="a6" /></div>
+                                <div class="control"><input type="number" class="input" id="a6" /></div>
 
                                 <button class="button is-success" type="Submit" onsubmit="exp(); reset(); display();" value=""><i class="fa fa-plus-circle" aria-hidden="true"></i>
                                     </button>
@@ -136,6 +136,7 @@
                     <div class="column">
                         <section class="hero is-success">
                             <div class="hero-body">
+                                <div id="daystogo"></div>
                                 <div id="remaining_budget"></div>
 
                             </div>
@@ -145,14 +146,14 @@
 
                     <div class="column">
                         <div class="box" id="exp_levels">
-                            <progress id="shpPrg" class="progress" max="100"></progress>
-                            <progress id="dinPrg" class="progress" max="100"></progress>
-                            <progress id="entPrg" class="progress" max="100"></progress>
-                            <progress id="grcPrg" class="progress" max="100"></progress>
-                            <progress id="alcPrg" class="progress" max="100"></progress>
-                            <progress id="hlPrg" class="progress" max="100"></progress>
-                            <progress id="ptPrg" class="progress" max="100"></progress>
-                            <progress id="gftPrg" class="progress" max="100"></progress>
+                            <progress id="shpPrg" class="progress is-primary is-medium" max="100"></progress>
+                            <progress id="dinPrg" class="progress is-info is-medium" max="100"></progress>
+                            <progress id="entPrg" class="progress is-warning is-medium" max="100"></progress>
+                            <progress id="grcPrg" class="progress is-danger is-medium" max="100"></progress>
+                            <progress id="alcPrg" class="progress is-info is-medium" max="100"></progress>
+                            <progress id="hlPrg" class="progress is-warning is-medium" max="100"></progress>
+                            <progress id="ptPrg" class="progress is-danger is-medium" max="100"></progress>
+                            <progress id="gftPrg" class="progress is-primary is-medium" max="100"></progress>
 
 
 

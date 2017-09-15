@@ -47,12 +47,21 @@ function display() {
     document.getElementById("remaining_budget").innerHTML = "<h4 class='subtitle'> Remaining Budget:" + "<h2 class='title'>$" + localStorage.getItem("Biweekly") + "</h2>" + "</h4>";
     var d = new Date();
     var n = d.getDate();
+    var dtp = 15 - n;
+
     var sb = localStorage.getItem("Static-BiWeekly");
     //This will reset the value of Biweekly in localStorage to the static value assigned when you first setup your budget.
     if (n === 15 || n === 30 || n === 31) {
         localStorage.setItem("Biweekly", sb);
     } else {
         console.log("Not yet payday!");
+    }
+
+    if (dtp == 1) {
+        document.getElementById("daystogo").innerHTML = "<h4 class='subtitle'> Day until payday:" + "<h2 class='title'>" + dtp + "</h2>" + "</h4>";
+    } else {
+        document.getElementById("daystogo").innerHTML = "<h4 class='subtitle'> Days until payday:" + "<h2 class='title'>" + dtp + "</h2>" + "</h4>";
+
     }
 
     //Come back to this and find a way to not display items that are null
@@ -91,6 +100,22 @@ function display() {
         "<p class='title'>" + "$" + gft + "<p>" +
         "</div>" + "</div>"
     "</nav>"
+
+    localStorage.setItem("Shopping-Percent", (shp / sb * 100).toFixed(0));
+
+    localStorage.setItem("Dining-Percent", (din / sb * 100).toFixed(0));
+
+    localStorage.setItem("Entertainment-Percent", (ent / sb * 100).toFixed(0));
+
+    localStorage.setItem("Groceries-Percent", (groc / sb * 100).toFixed(0));
+
+    localStorage.setItem("Alcohol-Percent", (alc / sb * 100).toFixed(0));
+
+    localStorage.setItem("Health-Percent", (heal / sb * 100).toFixed(0));
+
+    localStorage.setItem("Pet-Percent", (pt / sb * 100).toFixed(0));
+
+    localStorage.setItem("Gift-Percent", (gft / sb * 100).toFixed(0));
 
 
 
@@ -148,25 +173,20 @@ function exp() {
     localStorage.setItem("Biweekly", deduct.toFixed(2));
 
 
-    var statB = localStorage.getItem("Static-BiWeekly");
 
 
     switch (document.getElementById('a5').value) {
         case "shopping":
             localStorage.setItem(shopping, shpVal);
-            localStorage.setItem("Shopping-Percent", (shp / statB * 100));
             break;
         case "dining":
             localStorage.setItem(dining, dinVal);
-            localStorage.setItem("Dining-Percent", (din / statB * 100));
             break;
         case "entertainment":
             localStorage.setItem(entertainment, entVal);
-            localStorage.setItem("Entertainment-Percent", (ent / statB * 100));
             break;
         case "groceries":
             localStorage.setItem(groceries, grocVal);
-            localStorage.setItem("Groceries-Percent", (groc / statB * 100));
             break;
         case "alcohol":
             localStorage.setItem(alcohol, alcVal);
@@ -174,17 +194,15 @@ function exp() {
             break;
         case "health":
             localStorage.setItem(health, healVal);
-            localStorage.setItem("Health-Percent", (heal / statB * 100));
             break;
         case "pet":
             localStorage.setItem(pet, petVal);
-            localStorage.setItem("Pet-Percent", (pt / statB * 100));
             break;
         case "gift":
             localStorage.setItem(gift, giftVal);
-            localStorage.setItem("Gift-Percent", (gft / statB * 100));
             break;
     }
+
 
 
 

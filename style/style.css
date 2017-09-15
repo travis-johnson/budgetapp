@@ -15,7 +15,8 @@
     margin: 20px;
 }
 
-#exp_form {
+#exp_form,
+#daystogo {
     text-align: center;
 }
 
@@ -27,8 +28,26 @@
     padding: 0 !important;
 }
 
+progress {}
+
+progress:before {
+    content: attr(value)'%';
+    position: absolute;
+    left: 15%;
+    font-size: 14px;
+}
+
+
+/*Media Queries */
+
 @media(min-width:1024px) {
     .column {
         padding: 0.75rem !important;
     }
+    progress:before {
+        left: 75%;
+    }
 }
+
+
+/* End of Media Queries */
