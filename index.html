@@ -40,37 +40,37 @@
             <form>
 
                 <div class="field">
-                    <label class="label" for="salary">Salary<span>(yearly)</span></label>
+                    <label class="label" for="salary">Salary <span>(yearly)</span></label>
                     <div class="control"><input name="salary" class="input" id="a1" type="text"></div>
                 </div>
 
                 <div class="field">
-                    <label class="label" for="rent">Rent</label>
+                    <label class="label" for="rent">Rent <span>(monthly)</span></label>
                     <div class="control"> <input class="expenses input" name="rent" type="text" /></div>
                 </div>
 
                 <div class="field">
-                    <label class="label" for="util">Utilities</label>
+                    <label class="label" for="util">Utilities <span>(monthly)</span></label>
                     <div class="control"><input name="util" class="expenses input" type="text" /></div>
                 </div>
 
                 <div class="field">
-                    <label class="label" for="ins">Insurance</label>
+                    <label class="label" for="ins">Insurance <span>(monthly)</span></label>
                     <div class="control"><input class="expense input" name="ins" type="text" />
                     </div>
 
                     <div class="field">
-                        <label class="label" for="phone">Phone</label>
+                        <label class="label" for="phone">Phone <span>(monthly)</span></label>
                         <div class="control"><input class="expenses input" name="phone" type="text" /></div>
                     </div>
 
                     <div class="field">
-                        <label class="label" for="savings">Desired Savings</label>
+                        <label class="label" for="savings">Desired Savings <span>(monthly)</span></label>
                         <div class="control"><input class="expenses input" name="savings" type="text" /></div>
                     </div>
 
                     <div class="field">
-                        <label class="label" for="travel">Travel</label>
+                        <label class="label" for="travel">Travel <span>(monthly)</span></label>
                         <div class="control"><input class="expenses input" name="travel" type="text"></div>
                     </div>
 
@@ -89,19 +89,7 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
         <div id="expenses">
-
             <div class="container">
                 <div class="columns is-desktop">
                     <div class="column">
@@ -161,7 +149,67 @@
                         </div>
                     </div>
                 </div>
-                <div class="section" id="exp_desc"></div>
+                <div onload="display()" class="section" id="exp_desc">
+                    <nav class='level'>
+                        <div class='level-item has-text-centered'>
+                            <div>
+                                <p class='heading'> Shopping </p>
+                                <p id='shp-title' class='title'>
+                                </p>
+                            </div>
+                        </div>
+                        <div class='level-item has-text-centered'>
+                            <div>
+                                <p class='heading'>Dining</p>
+                                <p id='din-title' class='title'>
+                                    <p>
+                            </div>
+                        </div>
+                        <div class='level-item has-text-centered'>
+                            <div>
+                                <p class='heading'> Entertainment </p>
+                                <p id='ent-title' class='title'>
+                                    <p>
+                            </div>
+                        </div>
+                        <div class='level-item has-text-centered'>
+                            <div>
+                                <p class='heading'>Groceries</p>
+                                <p id='groc-title' class='title'>
+                                    <p>
+                            </div>
+                        </div>
+                        <div class='level-item has-text-centered'>
+                            <div>
+                                <p class='heading'>Alcohol</p>
+                                <p id='alc-title' class='title'>
+                                    <p>
+                            </div>
+                        </div>
+                        <div class='level-item has-text-centered'>
+                            <div>
+                                <p class='heading'>Health</p>
+                                <p id='heal-title' class='title'>
+                                    <p>
+                            </div>
+                        </div>
+                        <div class='level-item has-text-centered'>
+                            <div>
+                                <p class='heading'>Pet</p>
+                                <p id='pt-title' class='title'>
+                                    <p>
+                            </div>
+                        </div>
+                        <div class='level-item has-text-centered'>
+                            <div>
+                                <p class='heading'>Gift(s)</p>
+                                <p id='gft-title' class='title'>
+                                    <p>
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
 
             </div>
         </div>

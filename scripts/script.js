@@ -34,7 +34,7 @@ function reset() {
 }
 
 function display() {
-
+    var z = 0;
     var shp = localStorage.getItem("Shopping");
     var din = localStorage.getItem("Dining");
     var ent = localStorage.getItem("Entertainment");
@@ -43,64 +43,100 @@ function display() {
     var heal = localStorage.getItem("Health");
     var pt = localStorage.getItem("Pet");
     var gft = localStorage.getItem("Gift");
+    var sb = localStorage.getItem("Static-BiWeekly");
+
+    var shpTitle = document.getElementById('shp-title');
+    var dinTitle = document.getElementById('din-title');
+    var entTitle = document.getElementById('ent-title');
+    var grocTitle = document.getElementById('groc-title');
+    var alcTitle = document.getElementById('alc-title');
+    var healTitle = document.getElementById('heal-title');
+    var petTitle = document.getElementById('pt-title');
+    var giftTitle = document.getElementById('gft-title');
+
     //Displays the remaining budget and is actively deducted when user inputs an expense.
     document.getElementById("remaining_budget").innerHTML = "<h4 class='subtitle'> Remaining Budget:" + "<h2 class='title'>$" + localStorage.getItem("Biweekly") + "</h2>" + "</h4>";
     var d = new Date();
     var n = d.getDate();
     var dtp = 15 - n;
 
-    var sb = localStorage.getItem("Static-BiWeekly");
     //This will reset the value of Biweekly in localStorage to the static value assigned when you first setup your budget.
     if (n === 15 || n === 30 || n === 31) {
         localStorage.setItem("Biweekly", sb);
+
     } else {
         console.log("Not yet payday!");
     }
 
     if (dtp == 1) {
         document.getElementById("daystogo").innerHTML = "<h4 class='subtitle'> Day until payday:" + "<h2 class='title'>" + dtp + "</h2>" + "</h4>";
+    } else if (dtp === 0) {
+        document.getElementById("daystogo").innerHTML = "<h2 class='title'>It's PAYDAY!!!" + "</h2>";
+
     } else {
         document.getElementById("daystogo").innerHTML = "<h4 class='subtitle'> Days until payday:" + "<h2 class='title'>" + dtp + "</h2>" + "</h4>";
 
     }
 
-    //Come back to this and find a way to not display items that are null
-    document.getElementById('exp_desc').innerHTML =
-        "<nav class='level'>" +
-        "<div class='level-item has-text-centered'>" +
-        "<div>" + "<p class='heading'>" + "Shopping" + "</p>" +
-        "<p class='title'>" + "$" + shp + "<p>" +
-        "</div>" + "</div>" +
-        "<div class='level-item has-text-centered'>" +
-        "<div>" + "<p class='heading'>" + "Dining" + "</p>" +
-        "<p class='title'>" + "$" + din + "<p>" +
-        "</div>" + "</div>" +
-        "<div class='level-item has-text-centered'>" +
-        "<div>" + "<p class='heading'>" + "Entertainment" + "</p>" +
-        "<p class='title'>" + "$" + ent + "<p>" +
-        "</div>" + "</div>" +
-        "<div class='level-item has-text-centered'>" +
-        "<div>" + "<p class='heading'>" + "Groceries" + "</p>" +
-        "<p class='title'>" + "$" + groc + "<p>" +
-        "</div>" + "</div>" +
-        "<div class='level-item has-text-centered'>" +
-        "<div>" + "<p class='heading'>" + "Alcohol" + "</p>" +
-        "<p class='title'>" + "$" + alc + "<p>" +
-        "</div>" + "</div>" +
-        "<div class='level-item has-text-centered'>" +
-        "<div>" + "<p class='heading'>" + "Health" + "</p>" +
-        "<p class='title'>" + "$" + heal + "<p>" +
-        "</div>" + "</div>" +
-        "<div class='level-item has-text-centered'>" +
-        "<div>" + "<p class='heading'>" + "Pet" + "</p>" +
-        "<p class='title'>" + "$" + pt + "<p>" +
-        "</div>" + "</div>" +
-        "<div class='level-item has-text-centered'>" +
-        "<div>" + "<p class='heading'>" + "Gift(s)" + "</p>" +
-        "<p class='title'>" + "$" + gft + "<p>" +
-        "</div>" + "</div>"
-    "</nav>"
 
+
+
+
+
+
+    // document.getElementById('exp_desc').innerHTML =
+    //     "<nav class='level'>" +
+    //     "<div class='level-item has-text-centered'>" +
+    //     "<div>" + "<p class='heading'> Shopping </p>" +
+    //     "<p id='shp-title' class='title'>" + "$" + shp + "<p>" +
+    //     "</div>" + "</div>" +
+    //     "<div class='level-item has-text-centered'>" +
+    //     "<div>" + "<p class='heading'>Dining</p>" +
+    //     "<p id='din-title' class='title'>" + "$" + din + "<p>" +
+    //     "</div>" + "</div>" +
+    //     "<div class='level-item has-text-centered'>" +
+    //     "<div>" + "<p class='heading'> Entertainment </p>" +
+    //     "<p id='ent-title' class='title'>" + "$" + ent + "<p>" +
+    //     "</div>" + "</div>" +
+    //     "<div class='level-item has-text-centered'>" +
+    //     "<div>" + "<p class='heading'>Groceries</p>" +
+    //     "<p id='groc-title' class='title'>" + "$" + groc + "<p>" +
+    //     "</div>" + "</div>" +
+    //     "<div class='level-item has-text-centered'>" +
+    //     "<div>" + "<p class='heading'>Alcohol</p>" +
+    //     "<p id='alc-title' class='title'>" + "$" + alc + "<p>" +
+    //     "</div>" + "</div>" +
+    //     "<div class='level-item has-text-centered'>" +
+    //     "<div>" + "<p class='heading'>Health</p>" +
+    //     "<p id='heal-title' class='title'>" + "$" + heal + "<p>" +
+    //     "</div>" + "</div>" +
+    //     "<div class='level-item has-text-centered'>" +
+    //     "<div>" + "<p class='heading'>Pet</p>" +
+    //     "<p id='pt-title' class='title'>" + "$" + pt + "<p>" +
+    //     "</div>" + "</div>" +
+    //     "<div class='level-item has-text-centered'>" +
+    //     "<div>" + "<p class='heading'>Gift(s)</p>" +
+    //     "<p id='gft-title' class='title'>" + "$" + gft + "<p>" +
+    //     "</div>" + "</div>"
+    // "</nav>"
+
+
+
+    // this looks for non-existent objects in localstorage and replaces it with the string $0 until an expense value is entered into the app. However, this is not working and will only display $0 or null while not replacing those values with the actual value in localstorage.
+    shpTitle.innerHTML = "$" + shp;
+    dinTitle.innerHTML = "$" + din;
+    entTitle.innerHTML = "$" + ent;
+    grocTitle.innerHTML = "$" + groc;
+    alcTitle.innerHTML = "$" + alc;
+    healTitle.innerHTML = "$" + heal;
+    petTitle.innerHTML = "$" + pt;
+    giftTitle.innerHTML = "$" + gft;
+
+
+
+
+
+    //Calculates the percentage of each expense and stores it in a graphical chart.
     localStorage.setItem("Shopping-Percent", (shp / sb * 100).toFixed(0));
 
     localStorage.setItem("Dining-Percent", (din / sb * 100).toFixed(0));
@@ -173,7 +209,7 @@ function exp() {
     localStorage.setItem("Biweekly", deduct.toFixed(2));
 
 
-
+    //This portion adds the expense to the appropriate category and then stores the object in localstorage.
 
     switch (document.getElementById('a5').value) {
         case "shopping":
@@ -190,7 +226,7 @@ function exp() {
             break;
         case "alcohol":
             localStorage.setItem(alcohol, alcVal);
-            localStorage.setItem("Alcohol-Percent", (alc / statB * 100));
+            // localStorage.setItem("Alcohol-Percent", (alc / statB * 100));
             break;
         case "health":
             localStorage.setItem(health, healVal);
@@ -202,9 +238,6 @@ function exp() {
             localStorage.setItem(gift, giftVal);
             break;
     }
-
-
-
 
 }
 
