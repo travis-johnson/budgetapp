@@ -82,46 +82,6 @@ function display() {
 
 
 
-
-
-    // document.getElementById('exp_desc').innerHTML =
-    //     "<nav class='level'>" +
-    //     "<div class='level-item has-text-centered'>" +
-    //     "<div>" + "<p class='heading'> Shopping </p>" +
-    //     "<p id='shp-title' class='title'>" + "$" + shp + "<p>" +
-    //     "</div>" + "</div>" +
-    //     "<div class='level-item has-text-centered'>" +
-    //     "<div>" + "<p class='heading'>Dining</p>" +
-    //     "<p id='din-title' class='title'>" + "$" + din + "<p>" +
-    //     "</div>" + "</div>" +
-    //     "<div class='level-item has-text-centered'>" +
-    //     "<div>" + "<p class='heading'> Entertainment </p>" +
-    //     "<p id='ent-title' class='title'>" + "$" + ent + "<p>" +
-    //     "</div>" + "</div>" +
-    //     "<div class='level-item has-text-centered'>" +
-    //     "<div>" + "<p class='heading'>Groceries</p>" +
-    //     "<p id='groc-title' class='title'>" + "$" + groc + "<p>" +
-    //     "</div>" + "</div>" +
-    //     "<div class='level-item has-text-centered'>" +
-    //     "<div>" + "<p class='heading'>Alcohol</p>" +
-    //     "<p id='alc-title' class='title'>" + "$" + alc + "<p>" +
-    //     "</div>" + "</div>" +
-    //     "<div class='level-item has-text-centered'>" +
-    //     "<div>" + "<p class='heading'>Health</p>" +
-    //     "<p id='heal-title' class='title'>" + "$" + heal + "<p>" +
-    //     "</div>" + "</div>" +
-    //     "<div class='level-item has-text-centered'>" +
-    //     "<div>" + "<p class='heading'>Pet</p>" +
-    //     "<p id='pt-title' class='title'>" + "$" + pt + "<p>" +
-    //     "</div>" + "</div>" +
-    //     "<div class='level-item has-text-centered'>" +
-    //     "<div>" + "<p class='heading'>Gift(s)</p>" +
-    //     "<p id='gft-title' class='title'>" + "$" + gft + "<p>" +
-    //     "</div>" + "</div>"
-    // "</nav>"
-
-
-
     // this looks for non-existent objects in localstorage and replaces it with the string $0 until an expense value is entered into the app. However, this is not working and will only display $0 or null while not replacing those values with the actual value in localstorage.
     shpTitle.innerHTML = "$" + shp;
     dinTitle.innerHTML = "$" + din;
