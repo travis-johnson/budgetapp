@@ -79,20 +79,24 @@ function display() {
     }
 
 
+    // this looks for non-existent objects in localstorage and replaces it with the string $0 until an expense value is entered into the app. 
+if(shp == null){shpTitle.innerHTML = "$0";}else{   shpTitle.innerHTML= "$" + shp;}
+if(din == null){dinTitle.innerHTML = "$0";} else{dinTitle.innerHTML = "$" + din;}
+if(ent  == null){entTitle.innerHTML = "$0";}else{entTitle.innerHTML = "$"+ ent;}
+if(groc == null){grocTitle.innerHTML="$0";}else{grocTitle.innerHTML = "$" + groc;}
+if(alc == null){alcTitle.innerHTML="$0";}else{alcTitle.innerHTML = "$" + alc;}
+if(heal == null){healTitle.innerHTML="$0";}else{healTitle.innerHTML = "$" + heal;}
+if(pt == null){petTitle.innerHTML="$0";}else{petTitle.innerHTML = "$" + pt;}
+if(gft == null){giftTitle.innerHTML="$0";}else{giftTitle.innerHTML = "$" + gft;}
 
 
 
-    // this looks for non-existent objects in localstorage and replaces it with the string $0 until an expense value is entered into the app. However, this is not working and will only display $0 or null while not replacing those values with the actual value in localstorage.
-    shpTitle.innerHTML = "$" + shp;
-    dinTitle.innerHTML = "$" + din;
-    entTitle.innerHTML = "$" + ent;
-    grocTitle.innerHTML = "$" + groc;
-    alcTitle.innerHTML = "$" + alc;
-    healTitle.innerHTML = "$" + heal;
-    petTitle.innerHTML = "$" + pt;
-    giftTitle.innerHTML = "$" + gft;
 
+    
+    
+    
 
+ 
 
 
 
@@ -223,12 +227,3 @@ xpn.onclick = function() {
     expenses.classList.remove("invisible");
     budget.classList.add("invisible");
 }
-
-
-// function percent() {
-
-//     var biweekly = localStorage.getItem("Biweekly");
-//     var shp = localStorage.getItem("Shopping");
-//     localStorage.setItem("Shopping-Percent", (shp / biweekly * 100));
-
-// }
