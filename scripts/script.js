@@ -80,41 +80,25 @@ function display() {
 
 
     // this looks for non-existent objects in localstorage and replaces it with the string $0 until an expense value is entered into the app. 
-if(shp == null){shpTitle.innerHTML = "$0";}else{   shpTitle.innerHTML= "$" + shp;}
-if(din == null){dinTitle.innerHTML = "$0";} else{dinTitle.innerHTML = "$" + din;}
-if(ent  == null){entTitle.innerHTML = "$0";}else{entTitle.innerHTML = "$"+ ent;}
-if(groc == null){grocTitle.innerHTML="$0";}else{grocTitle.innerHTML = "$" + groc;}
-if(alc == null){alcTitle.innerHTML="$0";}else{alcTitle.innerHTML = "$" + alc;}
-if(heal == null){healTitle.innerHTML="$0";}else{healTitle.innerHTML = "$" + heal;}
-if(pt == null){petTitle.innerHTML="$0";}else{petTitle.innerHTML = "$" + pt;}
-if(gft == null){giftTitle.innerHTML="$0";}else{giftTitle.innerHTML = "$" + gft;}
-
-
-
-
-    
-    
-    
-
- 
+    if(shp == null){shpTitle.innerHTML = "$0";}else{shpTitle.innerHTML= "$" + shp;}
+    if(din == null){dinTitle.innerHTML = "$0";} else{dinTitle.innerHTML = "$" + din;}
+    if(ent  == null){entTitle.innerHTML = "$0";}else{entTitle.innerHTML = "$"+ ent;}
+    if(groc == null){grocTitle.innerHTML="$0";}else{grocTitle.innerHTML = "$" + groc;}
+    if(alc == null){alcTitle.innerHTML="$0";}else{alcTitle.innerHTML = "$" + alc;}
+    if(heal == null){healTitle.innerHTML="$0";}else{healTitle.innerHTML = "$" + heal;}
+    if(pt == null){petTitle.innerHTML="$0";}else{petTitle.innerHTML = "$" + pt;}
+    if(gft == null){giftTitle.innerHTML="$0";}else{giftTitle.innerHTML = "$" + gft;}
 
 
 
     //Calculates the percentage of each expense and stores it in a graphical chart.
     localStorage.setItem("Shopping-Percent", (shp / sb * 100).toFixed(0));
-
     localStorage.setItem("Dining-Percent", (din / sb * 100).toFixed(0));
-
     localStorage.setItem("Entertainment-Percent", (ent / sb * 100).toFixed(0));
-
     localStorage.setItem("Groceries-Percent", (groc / sb * 100).toFixed(0));
-
     localStorage.setItem("Alcohol-Percent", (alc / sb * 100).toFixed(0));
-
     localStorage.setItem("Health-Percent", (heal / sb * 100).toFixed(0));
-
     localStorage.setItem("Pet-Percent", (pt / sb * 100).toFixed(0));
-
     localStorage.setItem("Gift-Percent", (gft / sb * 100).toFixed(0));
 
 

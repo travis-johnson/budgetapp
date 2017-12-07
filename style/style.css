@@ -28,13 +28,19 @@
     padding: 0 !important;
 }
 
-progress {}
-
-progress:before {
-    content: attr(value)'%';
-    position: absolute;
-    left: 15%;
+.progress {
     font-size: 14px;
+    text-align: center;
+}
+
+.progress:before {
+    content: "TEST";
+    position: relative;
+}
+
+#a6 {
+    max-width: 120px;
+    margin-left: 20px;
 }
 
 
