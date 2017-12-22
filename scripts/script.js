@@ -1,3 +1,19 @@
+//Checks to see if the user has input their budget.  If they haven't then it will display the budget tab first and then switch back to expenses.  Once the use reloads the page they will still see the expenses tab but will still be able to update fields in the budget tab.
+if(typeof localCk !== 'undefined' && localCk !== 'null'){
+    var localCk = localStorage.getItem(["*-percent"]);
+    var budget = document.getElementById("budget");
+    var expenses = document.getElementById("expenses");
+    
+    var bgt = document.getElementById("bgt");
+    var xpn = document.getElementById("xpn");
+
+    bgt.classList.add('is-active');
+    xpn.classList.remove('is-active');
+    budget.classList.remove("invisible");
+    expenses.classList.add("invisible");
+}
+
+
 function calculate() {
     var sal = document.getElementById('a1');
     var exp = document.getElementsByClassName('expenses');
@@ -58,7 +74,7 @@ function display() {
     document.getElementById("remaining_budget").innerHTML = "<h4 class='subtitle'> Remaining Budget:" + "<h2 class='title'>$" + localStorage.getItem("Biweekly") + "</h2>" + "</h4>";
     var d = new Date();
     var n = d.getDate();
-    var dtp = 15 - n;
+    var dtp = n - 15;
 
     //This will reset the value of Biweekly in localStorage to the static value assigned when you first setup your budget.
     if (n === 15 || n === 30 || n === 31) {
@@ -101,7 +117,7 @@ function display() {
     localStorage.setItem("Pet-Percent", (pt / sb * 100).toFixed(0));
     localStorage.setItem("Gift-Percent", (gft / sb * 100).toFixed(0));
 
-
+    document.getElementsByClassName("progLabel").innerHTML= localStorage.getItem(["*-percent"]) + "%";
 
     document.getElementById("shpPrg").value = localStorage.getItem("Shopping-Percent");
     document.getElementById("dinPrg").value = localStorage.getItem("Dining-Percent");
@@ -211,3 +227,20 @@ xpn.onclick = function() {
     expenses.classList.remove("invisible");
     budget.classList.add("invisible");
 }
+
+
+//animates the progress bar on submission
+// function move() {
+//     var elem = document.getElementById("myBar"); 
+//     var width = 10;
+//     var id = setInterval(frame, 10);
+//     function frame() {
+//         if (width >= 100) {
+//             clearInterval(id);
+//         } else {
+//             width++; 
+//             elem.style.width = width + '%'; 
+//             elem.innerHTML = width * 1 + '%';
+//         }
+//     }
+// }

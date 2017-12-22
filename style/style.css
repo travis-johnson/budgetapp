@@ -28,7 +28,28 @@
     padding: 0 !important;
 }
 
-.progress {
+#myBar {
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+.progress::-webkit-progress-value {
+    transition: width 0.5s ease;
+}
+
+.progress:not(:last-child) {
+    margin-bottom: .8rem !important;
+}
+
+.heading {
+    margin-bottom: 0 !important;
+}
+
+
+/* .progress {
     font-size: 14px;
     text-align: center;
 }
@@ -36,7 +57,7 @@
 .progress:before {
     content: "TEST";
     position: relative;
-}
+} */
 
 #a6 {
     max-width: 120px;
