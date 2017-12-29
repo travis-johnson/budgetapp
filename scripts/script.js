@@ -1,18 +1,23 @@
-//Checks to see if the user has input their budget.  If they haven't then it will display the budget tab first and then switch back to expenses.  Once the use reloads the page they will still see the expenses tab but will still be able to update fields in the budget tab.
-var localCk = localStorage.getItem(["*-percent"]);
+// //Checks to see if the user has input their budget.  If they haven't then it will display the budget tab first and then switch back to expenses.  Once the use reloads the page they will still see the expenses tab but will still be able to update fields in the budget tab.
+// var localCk = localStorage.getItem(["*-percent"]);
 
-if(typeof localCk !== 'undefined' && localCk !== 'null'){
-    var budget = document.getElementById("budget");
-    var expenses = document.getElementById("expenses");
+// if(typeof localCk !== 'undefined' && localCk !== 'null'){
+//     var budget = document.getElementById("budget");
+//     var expenses = document.getElementById("expenses");
     
-    var bgt = document.getElementById("bgt");
-    var xpn = document.getElementById("xpn");
+//     var bgt = document.getElementById("bgt");
+//     var xpn = document.getElementById("xpn");
 
-    bgt.classList.add('is-active');
-    xpn.classList.remove('is-active');
-    budget.classList.remove("invisible");
-    expenses.classList.add("invisible");
-}
+//     bgt.classList.add('is-active');
+//     xpn.classList.remove('is-active');
+//     budget.classList.remove("invisible");
+//     expenses.classList.add("invisible");
+// } else if(typeof localCk !== 0){
+//     bgt.classList.remove('is-active');
+//     xpn.classList.add('is-active');
+//     budget.classList.add("invisible");
+//     expenses.classList.remove("invisible");
+// }
 
 
 function calculate() {
