@@ -80,7 +80,7 @@ function display() {
     //This will reset the value of Biweekly in localStorage to the static value assigned when you first setup your budget.
 
     //NOTE!:  Need to edit this statement to not always return the static-biweekly the entire day of the 15th, 30th, 31st.  More Specific timing with with the date method might work.
-    if (min === "31st,12:00:01 am" || min === "30th,12:00:01 am" || min === "31st,12:00:01 am") {
+    if (min === "1st,12:00:01 am" || min === "30th,12:00:01 am" || min === "31st,12:00:01 am") {
         localStorage.setItem("Biweekly", sb);
     } else {
         console.log("Not yet payday!");
