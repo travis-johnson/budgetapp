@@ -233,7 +233,7 @@ xpn.onclick = function() {
 
 //animates the progress bar on submission
 function move() {
-    var elem = document.getElementById("myBar"); 
+    var elem = document.querySelectorAll("progress"); 
     var width = 10;
     var id = setInterval(frame, 10);
     function frame() {
