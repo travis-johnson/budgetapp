@@ -1,23 +1,16 @@
-// //Checks to see if the user has input their budget.  If they haven't then it will display the budget tab first and then switch back to expenses.  Once the use reloads the page they will still see the expenses tab but will still be able to update fields in the budget tab.
-// var localCk = localStorage.getItem(["*-percent"]);
+//Checks to see if the user has input their budget.  If they haven't then it will display the budget tab first and then switch back to expenses.  Once the use reloads the page they will still see the expenses tab but will still be able to update fields in the budget tab.
+var localCk = localStorage.getItem("Annual");
 
-// if(typeof localCk !== 'undefined' && localCk !== 'null'){
-//     var budget = document.getElementById("budget");
-//     var expenses = document.getElementById("expenses");
-    
-//     var bgt = document.getElementById("bgt");
-//     var xpn = document.getElementById("xpn");
-
-//     bgt.classList.add('is-active');
-//     xpn.classList.remove('is-active');
-//     budget.classList.remove("invisible");
-//     expenses.classList.add("invisible");
-// } else if(typeof localCk !== 0){
-//     bgt.classList.remove('is-active');
-//     xpn.classList.add('is-active');
-//     budget.classList.add("invisible");
-//     expenses.classList.remove("invisible");
-// }
+if(typeof localCk === undefined || localCk === null){
+   console.log("Budget Not Complete");
+   
+   document.getElementById("budget").classList.toggle("invisible");
+   document.getElementById("bgt").classList.toggle("is-active");
+   
+   document.getElementById("expenses").classList.toggle("invisible");
+   document.getElementById("xpn").classList.toggle("is-active");
+   
+}
 
 
 function calculate() {
@@ -80,12 +73,15 @@ function display() {
     document.getElementById("remaining_budget").innerHTML = "<h4 class='subtitle'> Remaining Budget:" + "<h2 class='title'>$" + localStorage.getItem("Biweekly") + "</h2>" + "</h4>";
     var d = new Date();
     var n = d.getDate();
-    var dtp = n - 15;
-
+    var dtp = 15 - n;
+    let min = moment().format('Do,h:mm:ss a'); // January 2nd 2018, 3:32:05 pm;
+    console.log(min);
+    
     //This will reset the value of Biweekly in localStorage to the static value assigned when you first setup your budget.
-    if (n === 15 || n === 30 || n === 31) {
-        localStorage.setItem("Biweekly", sb);
 
+    //NOTE!:  Need to edit this statement to not always return the static-biweekly the entire day of the 15th, 30th, 31st.  More Specific timing with with the date method might work.
+    if (min === "31st,12:00:01 am" || min === "30th,12:00:01 am" || min === "31st,12:00:01 am") {
+        localStorage.setItem("Biweekly", sb);
     } else {
         console.log("Not yet payday!");
     }
@@ -236,17 +232,17 @@ xpn.onclick = function() {
 
 
 //animates the progress bar on submission
-// function move() {
-//     var elem = document.getElementById("myBar"); 
-//     var width = 10;
-//     var id = setInterval(frame, 10);
-//     function frame() {
-//         if (width >= 100) {
-//             clearInterval(id);
-//         } else {
-//             width++; 
-//             elem.style.width = width + '%'; 
-//             elem.innerHTML = width * 1 + '%';
-//         }
-//     }
-// }
+function move() {
+    var elem = document.getElementById("myBar"); 
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+            elem.innerHTML = width * 1 + '%';
+        }
+    }
+}
