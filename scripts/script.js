@@ -107,17 +107,17 @@ function display() {
     if(pt == null){petTitle.innerHTML="$0";}else{petTitle.innerHTML = "$" + pt;}
     if(gft == null){giftTitle.innerHTML="$0";}else{giftTitle.innerHTML = "$" + gft;}
 
-
-
+    var biweekly = localStorage.getItem("Biweekly");
+    
     //Calculates the percentage of each expense and stores it in a graphical chart.
-    localStorage.setItem("Shopping-Percent", (shp / sb * 100).toFixed(0));
-    localStorage.setItem("Dining-Percent", (din / sb * 100).toFixed(0));
-    localStorage.setItem("Entertainment-Percent", (ent / sb * 100).toFixed(0));
-    localStorage.setItem("Groceries-Percent", (groc / sb * 100).toFixed(0));
-    localStorage.setItem("Alcohol-Percent", (alc / sb * 100).toFixed(0));
-    localStorage.setItem("Health-Percent", (heal / sb * 100).toFixed(0));
-    localStorage.setItem("Pet-Percent", (pt / sb * 100).toFixed(0));
-    localStorage.setItem("Gift-Percent", (gft / sb * 100).toFixed(0));
+    localStorage.setItem("Shopping-Percent", (shp / biweekly * 100).toFixed(0));
+    localStorage.setItem("Dining-Percent", (din / biweekly * 100).toFixed(0));
+    localStorage.setItem("Entertainment-Percent", (ent / biweekly * 100).toFixed(0));
+    localStorage.setItem("Groceries-Percent", (groc / biweekly * 100).toFixed(0));
+    localStorage.setItem("Alcohol-Percent", (alc / biweekly * 100).toFixed(0));
+    localStorage.setItem("Health-Percent", (heal / biweekly * 100).toFixed(0));
+    localStorage.setItem("Pet-Percent", (pt / biweekly * 100).toFixed(0));
+    localStorage.setItem("Gift-Percent", (gft / biweekly * 100).toFixed(0));
 
     document.getElementsByClassName("progLabel").innerHTML= localStorage.getItem(["*-percent"]) + "%";
 
